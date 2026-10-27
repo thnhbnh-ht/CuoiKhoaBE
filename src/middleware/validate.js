@@ -53,3 +53,14 @@ export const loginRules = [
     .trim()
     .notEmpty().withMessage("Mật khẩu không được để trống"),
 ];
+
+export const createClassRules = [
+  body("name")
+    .trim()
+    .notEmpty().withMessage("Tên lớp học không được để trống")
+    .isLength({ min: 3, max: 100 }).withMessage("Tên lớp phải từ 3 đến 100 ký tự"),
+
+  body("description")
+    .optional()
+    .trim(),
+];
